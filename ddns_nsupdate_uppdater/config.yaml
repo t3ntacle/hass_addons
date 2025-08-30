@@ -19,5 +19,6 @@ schema:
     - hostnames: str
       key_name: str
       hmac_key: str
+      hmac_private: str
       server: str
       zone: str
