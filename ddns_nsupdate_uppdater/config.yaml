@@ -17,6 +17,7 @@ options:
 schema:
   config:
     - hostnames: str
+      key_name: str
       hmac_key: str
       server: str
       zone: str

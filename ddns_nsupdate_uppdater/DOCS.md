@@ -9,7 +9,8 @@ This addon is used to update a DDNS record using nsupdate (rfc2136) protocol
 
 ```yaml
 config:
-  - hmac_key: <hmac key from bind key>
+  - key_name: K{name}.+{alg}.+{random}
+    hmac_key: <hmac key from bind key>
     server: <dns server address>
     zone: <dns zone to modify>
     hostnames: my.example.com,www.example.com
