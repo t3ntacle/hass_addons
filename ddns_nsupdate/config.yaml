@@ -1,7 +1,7 @@
-name: "nsupdate (rfc2136) ddclient  DDNS Updater"
-description: "nsupdate DDNS Updater"
-version: "1.0.0"
-slug: "ddns_nsupdate_updater"
+name: "nsupdate DDNS Updater"
+description: "nsupdate (rfc2136) DDNS Updater"
+version: "1.0.1"
+slug: "ddns_nsupdate"
 init: false
 arch:
   - aarch64
