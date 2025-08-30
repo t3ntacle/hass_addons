@@ -15,7 +15,7 @@ echo "$DDCLIENT_CONFIG" | while IFS= read -r line; do
     server=$(echo "$line" | jq -r '.server')
     hostnames=$(echo "$line" | jq -r '.hostnames')
     hmac_key="$(echo "$line" | jq -r '.hmac_key')"
-    hmac_private="$(echo "$line" | jq -r '.hmac_provate')"
+    hmac_private="$(echo "$line" | jq -r '.hmac_private')"
     key_name=$(echo "$line" | jq -r '.key_name')
 
     echo "$hmac_private" >"$KEYPATH/${key_name}.private"
