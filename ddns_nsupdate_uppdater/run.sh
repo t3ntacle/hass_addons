@@ -14,16 +14,16 @@ echo "$DDCLIENT_CONFIG" | while IFS= read -r line; do
     zone=$(echo "$line" | jq -r '.zone')
     server=$(echo "$line" | jq -r '.server')
     hostnames=$(echo "$line" | jq -r '.hostnames')
-    hmac_key=$(echo "$line" | jq -r '.hmac_key')
+    hmac_key="$(echo "$line" | jq -r '.hmac_key')"
     key_name=$(echo "$line" | jq -r '.key_name')
 
-    echo $hmac_key >"$KEYPATH/${key_name}.key"
+    echo "$hmac_key" >"$KEYPATH/${key_name}.private"
     
     # Append configuration section for this entry
     cat >> "$CONFIG" << EOL
 protocol=nsupdate
 server=${server}
-password=$KEYPATH/${key_name}.key
+password=$KEYPATH/${key_name}.private
 zone=${zone}
 ${hostnames}
 EOL
